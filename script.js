@@ -1,5 +1,6 @@
 const grid = document.querySelector(".grid");
 const button = document.querySelector("button");
+const boxes = document.querySelectorAll('.box');
 
 // The length of the grid
 const gridSide = grid.offsetHeight - 4;
@@ -35,8 +36,18 @@ function generateBox() {
         
         grid.appendChild(box);
     }
-}
 
+    const boxes = document.querySelectorAll(".box");
+    boxes.forEach((box) => {
+        box.addEventListener("mouseover", () => {
+            box.style.backgroundColor = "red";
+        });
+    
+        box.addEventListener('mouseout', () => {
+            box.style.backgroundColor = ''; 
+        });
+    });
+}
 
 
 // init
