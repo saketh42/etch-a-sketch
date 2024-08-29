@@ -9,6 +9,7 @@ body {
 }
 
 .left {
+    background-color: #99aedb;
     border: solid 2px #263560;
     border-radius: 10px;
     padding: 8px;
@@ -30,7 +31,7 @@ body {
 
 .button {
     color: #263560;
-    background-color: #8679C4;
+    background-color: #ADBBDA;
     font-size: 16px;
     font-weight: 600;
     padding: 4px;
@@ -43,7 +44,6 @@ body {
     width: 720px;
     border: solid 2px #263560;
     display: flex;
-    gap: 1px;
     flex-wrap: wrap;
     flex-grow: 0;
 }
