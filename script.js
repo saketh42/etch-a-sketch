@@ -10,7 +10,11 @@ let size = 16;
 // To change the size of the grid
 button.addEventListener("click", () => {
     size = prompt("Enter the size of the grid:");
-    generateBox();
+    if (size > 100  || size < 1) {
+        alert("Size should be between 1 and 100");
+    } else {
+        generateBox();
+    }
 });
 
 function generateBox() {
@@ -32,6 +36,8 @@ function generateBox() {
         grid.appendChild(box);
     }
 }
+
+
 
 // init
 generateBox();
