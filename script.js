@@ -3,6 +3,7 @@ const button = document.querySelector(".grid-size-button");
 const boxes = document.querySelectorAll('.box');
 const reset = document.querySelector(".reset");
 const colors = document.querySelectorAll(".color");
+const brush = document.querySelector(".brush");
 
 // The length of the grid
 const gridSide = grid.offsetHeight - 4;
@@ -10,6 +11,7 @@ const gridSide = grid.offsetHeight - 4;
 // The default number of boxes
 let size = 16;
 let color = "#2ecf35";
+let brushEffect = true;
 
 // To change the size of the grid
 button.addEventListener("click", () => {
@@ -68,15 +70,23 @@ function generateBox() {
     boxes.forEach((box) => {
         box.addEventListener('mouseover', () => {
             box.style.backgroundColor = color;
-
-            let currentOpacity = parseFloat(box.style.opacity) || 0; // Get current opacity
-            if (currentOpacity < 1) {
-                box.style.opacity = (currentOpacity + 0.2).toFixed(1);
+                
+            if (brushEffect == true) {
+                let currentOpacity = parseFloat(box.style.opacity) || 0; // Get current opacity
+                if (currentOpacity < 1) {
+                    box.style.opacity = (currentOpacity + 0.2).toFixed(1);
+                }
+            } else {
+                box.style.opacity = "1";
             }
         });
     });
 }
 
+
+brush.addEventListener("click", () => {
+    brushEffect = !brushEffect;
+});
 
 // init
 generateBox();
