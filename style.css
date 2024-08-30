@@ -48,3 +48,39 @@ body {
     flex-grow: 0;
 }
 
+.colors{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #263560;
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    border: solid #263560 1px;
+    border-radius: 5px;
+}
+
+.red {
+    background-color: #cf352e;
+}
+
+.blue {
+    background-color: #352ecf;
+}
+
+.green {
+    background-color: #2ecf35;
+}
+
+.white {
+    background-color: #ffffff;
+}
+
+.black {
+    background-color: #000000;
+}
+
