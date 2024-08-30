@@ -44,12 +44,16 @@ function generateBox() {
 
     const boxes = document.querySelectorAll(".box");
     boxes.forEach((box) => {
-        box.addEventListener("mouseover", () => {
-            box.style.backgroundColor = "";
-        });
-    
         box.addEventListener('mouseout', () => {
-            box.style.backgroundColor = ''; 
+            if (box.style.backgroundColor == "white") {
+                box.style.backgroundColor = "black";
+                box.style.opacity = "0.2";
+            } else {
+                let currentOpacity = parseFloat(box.style.opacity);
+                if (currentOpacity < 1) {
+                    box.style.opacity = (currentOpacity + 0.2).toString();
+                }
+            }
         });
     });
 }
